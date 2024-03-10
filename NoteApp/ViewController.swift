@@ -43,6 +43,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
+        let savedNote = UserDefaults.standard.object(forKey: "note")
+        let savedTime = UserDefaults.standard.object(forKey: "time")
+        
+        if (savedNote as? String) != nil{
+            UserDefaults.standard.removeObject(forKey: "note")
+            notelabel.text = "To-Do: "
+        }
+        
+        if (savedTime as? String) != nil {
+            UserDefaults.standard.removeObject(forKey: "time")
+            timelabel.text = "The Time for To-Do: "
+        }
     }
 }
 
