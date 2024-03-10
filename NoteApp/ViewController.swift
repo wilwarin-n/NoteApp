@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveClicked(_ sender: Any) {
+        
+        notelabel.text = "To-Do: \(noteTextField.text!)"
+        timelabel.text = "The Time for To-do: \(timeTextfield.text!)"
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
